@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>REDandBLUE</title>
+        <link rel="icon" href="redandblue_logo.png" >
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_signUp.css">
+    <body>
+        <div class="navbar">
+            <div class="pos1">
+                <div><a href="./index.html">Sign In</a></div>
+                <div class="active" ><a href="./signUp.html" >Sign Up</a></div>
+                <div><a>Help</a></div>
+            </div>
+            <div>
+                <img src="redandblue_logo.png" height="40px" alt="logo" style="margin-bottom: 15px;">
+                <img src="REDandBLUE.png"   height="30px" width = "200px" alt="REDandBLUE" style="padding:20px 0px;">
+            </div>
+        </div>
+
+        <div class="signUpPanel">
+            <h3 style="text-align: center;">Create an account</h3>
+            <p style="text-align: center;">to continue</p>
+            <form action="post">
+                <input type="text" placeholder="First Name" name="fname">
+                <input type="text" placeholder="Last Name" name="lname">
+                <input type="text" placeholder="Mobile Number" name="mobno" style="display: block;">
+                <input type="text" placeholder="User Name" name="uname" style="display: block;width: 70%;">
+                <input type="password" id="pwd" placeholder="Password" name="pwd">
+                <input type="Password" id="show" placeholder="Retype to confirm" style="display: inline;">
+                <input type="checkbox" id="showPwd" onclick="toggle();" style="display: inline; margin-left: 55%;">
+                <p style="display:inline-block; position:relative; bottom: 1em;">Show password</p>
+                <button class = "hoverAction" id="redirect" type="button" value="Sign Up" onclick="verify();" style="display: block; margin-left: 42%; margin-right: 40%; 
+                margin-top: 0.5em;background-color: #006ED4; color: white; border: none;">Sign Up</button>
+            </form>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

@@ -1,0 +1,37 @@
+
+.signUpPanel {
+    overflow : hidden;
+    height : 80%;
+    width : 30%;
+    margin-left: 35%;
+    margin-right:30%;
+    margin-top: 3%;
+    border:0.5px solid grey;
+    border-radius: 5px;
+    font-size:inherit;
+
+}
+
+.signUpPanel input,button{
+    font-size: 1em;
+    margin-left:1em;
+    margin-top: 2em;
+    margin-bottom: 0.2em;
+    border-radius: 5px;
+    border : 0.5px solid grey;
+    width:auto;
+    height:3em;
+}
+
+.signUpPanel input:focus{
+    outline: 1px solid #006ED4;
+}
+
+.hoverAction:hover{
+    box-shadow:  0px 10px 2px 2px rgb(200, 196, 196);
+}
+
+#showPwd{
+    width:5%;
+    margin-left: 15%;
+}
