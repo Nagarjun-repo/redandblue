@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<web-app>
+
+    <servlet>
+        <servlet-name>authenticate-user</servlet-name>
+        <servlet-class>auth-servlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>createNewUser</servlet-name>
+        <servlet-class>createUser_servlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>authenticate-user</servlet-name>
+        <url-pattern>index.html/authenticate</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>createNewUser</servlet-name>
+        <url-pattern>signUp.html/create</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
