@@ -1,12 +1,13 @@
 body {
     overflow: hidden;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
     width: auto;
     height:7.5%;
-    border-bottom: 0.5px solid grey;
+    border: 0.5px solid lightgrey;
     overflow: hidden;
 }
 
@@ -46,7 +47,7 @@ body {
     width : 30%;
     padding-bottom: 1em;
     border-radius: 5px;
-    border: 0.5px solid grey;
+    border: 0.5px solid lightgrey;
     font-size: inherit;
     position: relative;
     left: 35%;
@@ -60,7 +61,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
     padding-left: 0.5em;
-    border: 0.5px solid grey;
+    border: 0.5px solid lightgrey;
     border-radius: 5px;
     display: block;
     width:80%;
