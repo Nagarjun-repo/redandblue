@@ -3,24 +3,94 @@
     height: 100%;
     overflow:hidden;
     display: flex;
-    align-items: center;
+    margin: 0;
     justify-content: space-around;
-    background-color: #006ED4;
     font-family: 'Roboto', sans-serif;
     
 }
 
 .leftpanel{
-    width:19.5%;
-    height: 99%;
+    width:15.5%;
+    height: 98%;
+    background-color: #F5F5F5;
     border: 0.5px solid lightgrey;
-    background-color: white;
+    display:flex;
+    flex-direction: column;
+    padding-top: 2%;
 }
 
 .middlepanel{
-    width:80%;
-    height: 99%;
+    width:84.5%;
+    height: 98%;
     overflow: scroll;
-    border:0.5px solid lightgrey;
-    background-color: white;
+    border: 0.5px solid lightgrey;
+    background-color: #F5F5F5;
+}
+
+.leftpanel div{
+    
+    width:90%;
+    height: 5%;
+    display: flex;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    justify-content: space-around;
+    
+}
+
+.leftpanel a{
+    height: fit-content;
+    font-size: medium;
+    margin: auto;
+}
+
+.present{
+    background-color: #006ED4;
+    color: black;
+}
+
+.hoverAction:hover{
+    background-color: #006ED4;
+    box-shadow: none;   
+}
+
+.pos-profile{
+    border-radius: 49%; 
+    position: relative;
+    left:78%;
+}
+
+.pos-button{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: rgb(241, 241, 241);
+    position :fixed;
+    bottom: 8%;
+    right: 6%;
+    height: 5%;
+    width: 10%;
+    z-index: 1em;
+    border-radius: 0.2em;
+    border: 0.5px solid lightgrey;
+    background-color: #006ED4;
+}
+
+.pos-button:hover{
+    background-color:#0079e9;
+}
+
+.search-bar{
+    width:50%;
+    height:5%;
+    margin-left: 5%;
+    margin-right: 30%;
+    margin-top: 1%;
+    border-radius: 0.2em;
+    border: 0.5px solid lightgrey;
+    font-size: medium;
+    padding-left: 1em;
+}
+
+.search-bar:focus{
+    outline: 0.5px solid #729efd;
 }
