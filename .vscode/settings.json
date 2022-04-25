@@ -2,6 +2,11 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\Users\\naga-pt5094\\Downloads\\apache-tomcat-9.0.62-windows-x64\\apache-tomcat-9.0.62\\lib\\servlet-api.jar",
-        "c:\\Users\\naga-pt5094\\Downloads\\apache-tomcat-9.0.62-windows-x64\\apache-tomcat-9.0.62\\lib\\databaseConnectorAPI.jar"
+        "WEB-INF\\classes\\lib\\postgresql-42.3.3.jar",
+        "c:\\Users\\naga-pt5094\\Documents\\javaFiles\\databaseConnectorAPI\\dist\\databaseConnectorAPI.jar"
+    ],
+    "java.project.sourcePaths": [
+        "WEB-INF\\classes",
+        "WEB-INF\\classes\\lib"
     ]
 }

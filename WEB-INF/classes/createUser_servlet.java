@@ -25,6 +25,7 @@ public class createUser_servlet extends HttpServlet{
             try{
                 Runnable thread_insertSignUpData = new insertSignupTimeData(fname, lname,mobNo,emailId, pwd);
                 new Thread(thread_insertSignUpData).start();
+                res.sendRedirect("index.html");
             }
             catch(Exception e){
                 System.out.println(e);

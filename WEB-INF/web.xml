@@ -4,7 +4,7 @@
 
     <servlet>
         <servlet-name>authenticate-user</servlet-name>
-        <servlet-class>auth-servlet</servlet-class>
+        <servlet-class>auth_servlet</servlet-class>
     </servlet>
 
     <servlet>
@@ -12,17 +12,29 @@
         <servlet-class>createUser_servlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>context-invalid</servlet-name>
+        <jsp-file>/invalidUser.html</jsp-file>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>authenticate-user</servlet-name>
-        <url-pattern>index.html/authenticate</url-pattern>
+        <url-pattern>/index.html/authenticate</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>createNewUser</servlet-name>
-        <url-pattern>signUp.html/create</url-pattern>
+        <url-pattern>/signUp.html/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>context-invalid</servlet-name>
+        <url-pattern>index.html/invalidUser.html</url-pattern>
+        <url-pattern>signUp.html/invalidUser.html</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
+
 </web-app>
