@@ -38,14 +38,20 @@
                 <div class="mailbox">mail llist</div>
 
                 <!--mail composer pop up box-->
-                <div class="pop-up_mailComposer">
-                    <div class="menubar"></div>
-                    <div class="from_field"></div>
-                    <div class="to_field"></div>
-                    <div class="sub_field"></div>
-                    <div class="content" role="textbox"><input type="text"></div>
+                <form class="pop-up_mailComposer" >
+                    <div class="menubar">
+                        <p style="padding-left: 1em; color: whitesmoke;">New</p>
+                        <button type="button" style="background-color: transparent; border: none; padding-right: 1em;">X</button>
+                    </div>
+                    <div class="from_field">
+                       <div class="description-field"><p>From :</p></div>
+                        <div class="input-field"><input></input></div>
+                    </div>
+                    <div class="to_field"><input class="to_field"></input></div>
+                    <div class="sub_field"><textarea class="sub_field"></textarea></div>
+                    <textarea class="content"></textarea>
                     <div class="taskbar"></div>
-                </div>
+                </form>
             </div>
         </div>
     </body>
