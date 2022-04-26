@@ -22,7 +22,7 @@
 .middlepanel{
     width:84.5%;
     height: 98%;
-    overflow: scroll;
+    overflow: hidden;
     border: 0.5px solid lightgrey;
     background-color: #F5F5F5;
 }
@@ -69,7 +69,7 @@
     right: 6%;
     height: 5%;
     width: 10%;
-    z-index: 1em;
+    z-index: 1;
     border-radius: 0.2em;
     border: 0.5px solid lightgrey;
     background-color: #006ED4;
@@ -93,4 +93,65 @@
 
 .search-bar:focus{
     outline: 0.5px solid #729efd;
+}
+
+.mailbox{
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 95%;
+    height: 100%;
+    border: 0.5px solid lightgrey;
+    overflow: scroll;
+}
+
+.pop-up_mailComposer{
+    width:50%;
+    height:65%;
+    margin:1em;
+    position : fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    right:1%;
+    top:30%;
+    border: 0.5px solid lightgrey;
+    background-color: white;
+}
+
+.pop-up_mailComposer div{
+    border: 0.5px solid lightgrey;
+}
+
+.menubar{
+    flex-basis: 10%;
+}
+
+.from_field{
+    flex-basis:12%
+}
+
+.to_field{
+    flex-basis:12%;
+}
+
+.sub_field{
+    flex-basis:14%;
+}
+
+.content{
+    flex-basis:42%;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.content input{
+    width:100%;
+    height:100%;
+    margin:0;
+    border: none;
+    text-overflow: clip;
+}
+
+.taskbar{
+    flex-basis: 10%;
 }
