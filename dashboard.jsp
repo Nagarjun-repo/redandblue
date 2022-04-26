@@ -13,8 +13,8 @@
 
     <body>
         <div class="navbar">
-            <img src="redandblue_logo.png" height="40px" alt="logo" style="margin-bottom: 15px;">
-            <img src="REDandBLUE.png"   height="30px" width = "200px" alt="REDandBLUE" style="padding:20px 0px;">
+            <!--<img src="redandblue_logo.png" height="40px" alt="logo" style="margin-bottom: 15px;">!-->
+            <img src="REDandBLUE.png"   height="30em" width = "200em" alt="REDandBLUE" style="padding:1em 0 1em 0.5em;">
             <img src="profile-picture.jpg" height="98%" alt="profile-pic" class="pos-profile">
         </div>
         <div class="workspace">
