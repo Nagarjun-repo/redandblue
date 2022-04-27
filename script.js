@@ -1,6 +1,6 @@
-function toggle(){
+function toggle(id){
 
-    let obj = document.getElementById("show");
+    let obj = document.getElementById(id);
 
         if(obj.type == "password"){
             obj.type = "text";
@@ -22,8 +22,8 @@ function verify(){
         repwd.style.outline = "1px solid red";    
     }
     else{
+        alert("Account created successfully");
         let buttonAction = document.getElementById("redirect");
-        console.log(buttonAction);
         buttonAction.type = "submit";
      }
      
