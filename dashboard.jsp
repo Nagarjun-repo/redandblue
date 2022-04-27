@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_dashboard.css">
     <script src="script.js"></script>
+    <script src="script_dashboard.js"></script>
 
     <body>
 
@@ -34,23 +35,25 @@
                 has button action-->
             <div class="middlepanel">
                 <input type="text" placeholder="search" class="search-bar">
-                <button class="pos-button" type="menu">New mail</button>
+                <button class="pos-button" type="button" onclick="manage_popup('mail_composer')">New mail</button>
                 <div class="mailbox">mail llist</div>
 
                 <!--mail composer pop up box-->
-                <form class="pop-up_mailComposer" >
-                    <div class="menubar">
+                <form class="pop-up_mailComposer" id="mail_composer" action="post">
+                    <!--menu bar-->
+                    <div class="menubar" style="border: none;">
                         <p style="padding-left: 1em; color: whitesmoke;">New</p>
-                        <button type="button" style="background-color: transparent; border: none; padding-right: 1em;">X</button>
+                        <button type="button" style="border: none;padding-right: 0.5em;padding-left: 0.5em;font-size:large;" class="closeX" onclick="manage_popup('mail_composer')" >X</button>
                     </div>
-                    <div class="from_field">
-                       <div style="padding-top: 0.5em;" ><p class="description-field">From :</p></div>
-                        <div class="input-field"><input type="text"></div>
+                    <div class="from_field"><p class="description-field">From :</p><input type="text" form="mail_composer" class="input-field" style="width:93%"></div>
+                    <div class="to_field"><p class="description-field">To :</p><input type="text" form="mail_composer" class="input-field" style="width:95%;"></div>
+                    <textarea class="sub_field" placeholder="Subject" form="mail_composer"></textarea>
+                    <textarea class="content" form="mail_composer"></textarea>
+                    
+                    <!--Task bar-->
+                    <div class="taskbar" style="border: none;">
+                        <button type="submit" style="width:7%;height:80%;border-radius: 0.2em; border:none;background-color: #000408; color: whitesmoke;">Send</button>
                     </div>
-                    <div class="to_field"><input class="to_field"></input></div>
-                    <div class="sub_field"><textarea class="sub_field"></textarea></div>
-                    <textarea class="content"></textarea>
-                    <div class="taskbar"></div>
                 </form>
             </div>
         </div>

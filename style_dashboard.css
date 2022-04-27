@@ -1,3 +1,14 @@
+/*common style elements for the page-dashboard */
+.closeX{
+    background-color: #006ED4;;
+}
+
+.closeX:hover{
+    background-color: red;
+}
+
+/***********************************************/
+
 .workspace{
     width: 100%;
     height: 100%;
@@ -109,25 +120,31 @@
     height:65%;
     margin:0;
     position : fixed;
-    display: flex;
+    display: none;
     flex-direction: column;
     z-index: 2;
     right:1%;
     top:30%;
     border: 0.5px solid lightgrey;
     background-color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
 .pop-up_mailComposer textarea{
-    border: none;
+    border: 0.5px solid lightgrey;
     margin: 0;
     resize: none;
     overflow: hidden;
 }
 
+.pop-up_mailComposer div{
+    border: 0.5px solid lightgrey;
+}
+
 .menubar{
     flex-basis: 10%;
     background-color: #006ED4;
+    border:none;
     display:flex;
     justify-content: space-between;
 }
@@ -135,24 +152,36 @@
 .from_field{
     flex-basis:7%;
     display: flex;
-    border: 0.5px solid lightgrey;
+    color: #757575;
+    font-family: 'Roboto', sans-serif;
 }
 
 .to_field{
     flex-basis:7%;
+    display: flex;
+    color: #757575;
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
 }
 
 .sub_field{
     flex-basis:7%;
+    font-size: 1em;
+    color:black;
+    font-family: 'Roboto', sans-serif;
 }
 
 .content{
     flex-basis:63%;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
 }
 
 .taskbar{
     flex-basis: 10%;
     background-color: #006ED4;
+    padding-top: 0.5em;
+    padding-left: 1em;
 }
 
 .pop-up_mailComposer textarea:focus{
@@ -160,18 +189,23 @@
 }
 
 .input-field{
-    flex-basis: 90%;
-    padding-top: 10px;
     margin: 0;
     overflow: hidden;
+    border:none;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium; 
+    font-weight: 100;
 }
 
 .description-field{
-    height: fit-content;
-    width: fit-content;
+    height:auto;
+    width:auto;
+    padding-top: 0.5em;
+    padding-left: 0.2em;
     margin:0;
 }
 
-.input-field input{
-    border: 0.5px solid #006ED4;
+input:focus{
+    outline: none;
 }
+
