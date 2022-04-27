@@ -44,8 +44,8 @@
                         <button type="button" style="background-color: transparent; border: none; padding-right: 1em;">X</button>
                     </div>
                     <div class="from_field">
-                       <div class="description-field"><p>From :</p></div>
-                        <div class="input-field"><input></input></div>
+                       <div style="padding-top: 0.5em;" ><p class="description-field">From :</p></div>
+                        <div class="input-field"><input type="text"></div>
                     </div>
                     <div class="to_field"><input class="to_field"></input></div>
                     <div class="sub_field"><textarea class="sub_field"></textarea></div>
