@@ -1,3 +1,5 @@
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,9 +18,25 @@ public class auth_servlet extends HttpServlet{
 
         if(userId > 0){
             //redirect to userDashboard
+            try{
+
+                Cookie email_Cookie = new Cookie("email", email);
+                Cookie uid_Cookie   = new Cookie("userId", userId+"");
+                /*
+                 email is stored at index 0
+                 user id is stored at index 1
+                */
+                res.addCookie(email_Cookie);
+                res.addCookie(uid_Cookie);
+                res.sendRedirect("/redandblue/dashboard");
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
         }
         else{
             try{
+                
                 res.sendRedirect("invalidUser.html");
             }
             catch(Exception e){

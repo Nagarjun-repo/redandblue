@@ -37,13 +37,14 @@
                 <input type="text" placeholder="search" class="search-bar">
                 <button class="pos-button" type="button" onclick="manage_popup('mail_composer')">New mail</button>
                 <div class="mailbox">mail llist</div>
-
-                <%
                 
-                    String email=request.getParameter("email");
+                <%@ page import="javax.servlet.http.Cookie">
+                <%
+                    <!--acquiring the cookies from the response from the server-->
+                    Cookie cookies = response.getCookies();   
+                    String email = cookies[0].getValue();
                 
                 %>
-
                 <!--mail composer pop up box-->
                 <form class="pop-up_mailComposer" id="mail_composer" action="dashboard/push" method="post">
                     <!--menu bar-->

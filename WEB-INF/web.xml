@@ -21,7 +21,7 @@
         <servlet-name>launch_dashboard</servlet-name>
         <jsp-file>/dashboard.jsp</jsp-file>
     </servlet>
-
+    
     <servlet>
         <servlet-name>send-mail</servlet-name>
         <servlet-class>pushMail_servlet</servlet-class>
@@ -38,16 +38,17 @@
     </servlet-mapping>
 
     <servlet-mapping>
+        <servlet-name>launch_dashboard</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
         <servlet-name>context-invalid</servlet-name>
         <url-pattern>/index.html/invalidUser.html</url-pattern>
         <url-pattern>/signUp.html/invalidUser.html</url-pattern>
     </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>launch_dashboard</servlet-name>
-        <url-pattern>/dashboard</url-pattern>
-    </servlet-mapping>
-
+    
+    
     <servlet-mapping>
         <servlet-name>send-mail</servlet-name>
         <url-pattern>/dashboard/push</url-pattern>
