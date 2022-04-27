@@ -39,11 +39,12 @@
                 <div class="mailbox">mail llist</div>
 
                 <!--mail composer pop up box-->
-                <form class="pop-up_mailComposer" id="mail_composer" action="post">
+                <form class="pop-up_mailComposer" id="mail_composer" action="dashboard.jsp/push" method="post">
                     <!--menu bar-->
                     <div class="menubar" style="border: none;">
                         <p style="padding-left: 1em; color: whitesmoke;">New</p>
-                        <button type="button" style="border: none;padding-right: 0.5em;padding-left: 0.5em;font-size:large;" class="closeX" onclick="manage_popup('mail_composer')" >X</button>
+                        <button type="button" style="border: none;padding-right: 0.5em;padding-left: 0.5em;font-size:large; color:rgba(0, 0, 0, 0.496);
+                        width:fit-content;height: fit-content;margin-top: 0.6em;border-radius:30%;" class="closeX" onclick="manage_popup('mail_composer')" >x</button>
                     </div>
                     <div class="from_field"><p class="description-field">From :</p><input type="text" form="mail_composer" class="input-field" style="width:93%"></div>
                     <div class="to_field"><p class="description-field">To :</p><input type="text" form="mail_composer" class="input-field" style="width:95%;"></div>

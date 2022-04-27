@@ -17,6 +17,11 @@
         <jsp-file>/invalidUser.html</jsp-file>
     </servlet>
 
+    <servlet>
+        <servlet-name>send-mail</servlet-name>
+        <servlet-class>pushMail_servlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>authenticate-user</servlet-name>
         <url-pattern>/index.html/authenticate</url-pattern>
@@ -31,6 +36,11 @@
         <servlet-name>context-invalid</servlet-name>
         <url-pattern>/index.html/invalidUser.html</url-pattern>
         <url-pattern>/signUp.html/invalidUser.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>send-mail</servlet-name>
+        <url-pattern>/dashboard.jsp/push</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
