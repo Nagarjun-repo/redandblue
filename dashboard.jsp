@@ -64,7 +64,7 @@
                     
                     <!--Task bar-->
                     <div class="taskbar" style="border: none;">
-                        <button type="button" style="width:7%;height:80%;border-radius: 0.2em; border:none;background-color: #000408; color: whitesmoke;" onclick="push_mail()">Send</button>
+                        <button type="submit" style="width:7%;height:80%;border-radius: 0.2em; border:none;background-color:#65C18C; color: whitesmoke;" onclick="push_mail()">Send</button>
                     </div>
                 </form>
             </div>

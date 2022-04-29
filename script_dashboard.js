@@ -34,12 +34,28 @@ function leftpanel_activity_manager(id){
 }
 
 function push_mail(){
+    
+    let form = document.getElementById("mail_composer");
+    let to = form.elements['to'];
 
-    let mail_form = new FormData(document.querySelector("#mail_composer"));
+    let mail_form = new FormData(form);
     
     let httpRequest = new XMLHttpRequest();
 
-    for(name in mail_form){
-        console.log(name+""+mail_form[name]);
-    }
+    console.log(to);
 }
+
+function intercept_submit_mail(){
+    
+    let mail_composer = document.getElementById("mail_composer");
+
+    mail_composer.addEventListener("submit",function(Event){
+        Event.preventDefault();
+        push_mail();
+    });
+}
+
+window.addEventListener("load",intercept_submit_mail);
+
+
+
