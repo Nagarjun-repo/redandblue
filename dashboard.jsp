@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>">
     <script src="script.js"></script>
     <script src="script_dashboard.js"></script>
 
@@ -25,9 +26,9 @@
             <!--panel in the left side
                 has button action-->
             <div class="leftpanel">
-                <div class="present"><a>Inbox</a></div>
-                <div class="hoverAction"><a>Outbox</a></div>
-                <div class="hoverAction"><a>Settings</a></div>
+                <button class="present hoverAction" id="inbox_button" onclick="leftpanel_activity_manager('inbox_button')"><p>Inbox</p></button>
+                <button class="hoverAction" id="outbox_button" onclick="leftpanel_activity_manager('outbox_button')"><p>Outbox</p></button>
+                <button class="hoverAction" id="settings_button" onclick="leftpanel_activity_manager('settings_button')"><p>Settings</p></button>
             </div>
 
             <!--panel in the right
@@ -63,7 +64,7 @@
                     
                     <!--Task bar-->
                     <div class="taskbar" style="border: none;">
-                        <button type="submit" style="width:7%;height:80%;border-radius: 0.2em; border:none;background-color: #000408; color: whitesmoke;">Send</button>
+                        <button type="button" style="width:7%;height:80%;border-radius: 0.2em; border:none;background-color: #000408; color: whitesmoke;" onclick="push_mail()">Send</button>
                     </div>
                 </form>
             </div>
