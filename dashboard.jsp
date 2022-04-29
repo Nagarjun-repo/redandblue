@@ -38,13 +38,15 @@
                 <button class="pos-button" type="button" onclick="manage_popup('mail_composer')">New mail</button>
                 <div class="mailbox">mail llist</div>
                 
-                <%@ page import="javax.servlet.http.Cookie">
+                <%@ page import="javax.servlet.http.Cookie.*" %>
                 <%
-                    <!--acquiring the cookies from the response from the server-->
-                    Cookie cookies = response.getCookies();   
-                    String email = cookies[0].getValue();
+                    //acquiring the cookies from the response from the server
                 
+                    Cookie[] cookies = request.getCookies();   
+                    String email = cookies[0].getValue();
+                   
                 %>
+
                 <!--mail composer pop up box-->
                 <form class="pop-up_mailComposer" id="mail_composer" action="dashboard/push" method="post">
                     <!--menu bar-->
@@ -55,9 +57,9 @@
                     </div>
                     <div class="from_field"><p class="description-field">From :</p><input type="text" form="mail_composer" class="input-field" style="width:93%" 
                                 placeholder=<%= email %> readonly></div>
-                    <div class="to_field"><p class="description-field">To :</p><input type="text" form="mail_composer" class="input-field" style="width:95%;" ></div>
-                    <textarea class="sub_field" placeholder="Subject" form="mail_composer"></textarea>
-                    <textarea class="content" form="mail_composer"></textarea>
+                    <div class="to_field"><p class="description-field">To :</p><input type="text" form="mail_composer" class="input-field" style="width:95%;" name="toId"></div>
+                    <textarea class="sub_field" placeholder="Subject" form="mail_composer" name="sub"></textarea>
+                    <textarea class="content" form="mail_composer" name="msg"></textarea>
                     
                     <!--Task bar-->
                     <div class="taskbar" style="border: none;">

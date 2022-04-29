@@ -19,16 +19,18 @@ public class auth_servlet extends HttpServlet{
         if(userId > 0){
             //redirect to userDashboard
             try{
-
                 Cookie email_Cookie = new Cookie("email", email);
                 Cookie uid_Cookie   = new Cookie("userId", userId+"");
+                email_Cookie.setMaxAge(60*60);
+                uid_Cookie.setMaxAge(60*60);
                 /*
                  email is stored at index 0
                  user id is stored at index 1
                 */
                 res.addCookie(email_Cookie);
                 res.addCookie(uid_Cookie);
-                res.sendRedirect("/redandblue/dashboard");
+                RequestDispatcher dispatch = req.getRequestDispatcher("/dashboard.jsp");
+                dispatch.include(req, res);
             }
             catch(Exception e){
                 System.out.println(e);

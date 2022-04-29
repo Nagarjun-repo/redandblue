@@ -29,7 +29,7 @@
 
     <servlet-mapping>
         <servlet-name>authenticate-user</servlet-name>
-        <url-pattern>/index.html/authenticate</url-pattern>
+        <url-pattern>/authenticate</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
@@ -42,6 +42,7 @@
         <url-pattern>/dashboard</url-pattern>
     </servlet-mapping>
     
+
     <servlet-mapping>
         <servlet-name>context-invalid</servlet-name>
         <url-pattern>/index.html/invalidUser.html</url-pattern>
