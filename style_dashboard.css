@@ -152,13 +152,6 @@
     justify-content: space-between;
 }
 
-.from_field{
-    flex-basis:7%;
-    display: flex;
-    color: #757575;
-    font-family: 'Roboto', sans-serif;
-}
-
 .to_field{
     flex-basis:7%;
     display: flex;
@@ -175,7 +168,7 @@
 }
 
 .content{
-    flex-basis:63%;
+    flex-basis:70%;
     font-family: 'Roboto', sans-serif;
     font-size: medium;
 }

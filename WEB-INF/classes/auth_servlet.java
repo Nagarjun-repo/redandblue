@@ -30,7 +30,7 @@ public class auth_servlet extends HttpServlet{
                 res.addCookie(email_Cookie);
                 res.addCookie(uid_Cookie);
                 RequestDispatcher dispatch = req.getRequestDispatcher("/dashboard.jsp");
-                dispatch.include(req, res);
+                dispatch.forward(req, res);
             }
             catch(Exception e){
                 System.out.println(e);
@@ -39,7 +39,7 @@ public class auth_servlet extends HttpServlet{
         else{
             try{
                 
-                res.sendRedirect("invalidUser.html");
+                res.sendRedirect("invalidUser");
             }
             catch(Exception e){
                 System.out.println(e);

@@ -1,3 +1,8 @@
+window.addEventListener("load",function(){
+    //changing the url in the urlbar
+    window.history.pushState(null,null,"dashboard");
+});
+
 function manage_popup(id){
     let obj = document.getElementById(id);
 
@@ -35,27 +40,36 @@ function leftpanel_activity_manager(id){
 
 function push_mail(){
     
-    let form = document.getElementById("mail_composer");
-    let to = form.elements['to'];
-
-    let mail_form = new FormData(form);
+    const mail_form = document.getElementById("mail_composer");
     
+    const sub = mail_form.elements[2].value;
+    const msg = mail_form.elements[3].value;
+    const userId = mail_form.elements[4].value;
+
+    let mail = new FormData(mail_form);
+
     let httpRequest = new XMLHttpRequest();
 
-    console.log(to);
+    let button = document.getElementById("mail_push_button");
+
+    button.type = "reset";
+
+    mail_form.style.display = "none";
+
+    console.log(mail.values());
+
+    httpRequest.open("POST","dashboard/push");
+    httpRequest.send(mail);
+
+    httpRequest.onload = function(){
+        if(httpRequest.status == 200){
+            alert("mail sent");
+        }
+        else{
+            alert("There was a problem in sending the mail");
+        }
+    }
+
 }
-
-function intercept_submit_mail(){
-    
-    let mail_composer = document.getElementById("mail_composer");
-
-    mail_composer.addEventListener("submit",function(Event){
-        Event.preventDefault();
-        push_mail();
-    });
-}
-
-window.addEventListener("load",intercept_submit_mail);
-
 
 

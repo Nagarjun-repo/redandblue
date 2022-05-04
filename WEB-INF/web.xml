@@ -45,8 +45,7 @@
 
     <servlet-mapping>
         <servlet-name>context-invalid</servlet-name>
-        <url-pattern>/index.html/invalidUser.html</url-pattern>
-        <url-pattern>/signUp.html/invalidUser.html</url-pattern>
+        <url-pattern>/invalidUser</url-pattern>
     </servlet-mapping>
     
     
