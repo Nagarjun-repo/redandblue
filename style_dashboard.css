@@ -110,6 +110,8 @@
 }
 
 .mailbox{
+    display: flex;
+    flex-direction: column;
     margin-left: 5%;
     margin-top: 1%;
     width: 95%;
@@ -205,3 +207,17 @@ input:focus{
     outline: none;
 }
 
+.style_mailContainer{
+    flex-basis: 5%;
+    border: 0.5px solid lightgrey;
+    
+}
+
+.style_mailContainer p{
+    margin:1em;
+    text-overflow: ellipsis;
+}
+
+.style_mailContainer:hover{
+    background-color: rgb(244, 110, 110);
+}

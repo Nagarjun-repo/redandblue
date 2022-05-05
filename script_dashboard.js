@@ -72,4 +72,28 @@ function push_mail(){
 
 }
 
+//function gets inbox mails from the database and displays them in the user interface
+
+function loadMails(url){
+
+    $.ajax({
+        url: url,
+        type:'GET',
+        success:function(response,status,xhr){
+            console.log(response.length)
+            console.log(response);
+            let mailbox = $(".mailbox");
+
+            //setting mail argument in simple mail container
+
+            for(let i=0;i<response.length;i++){
+                let mail_container = $(".simple_mail_container").clone();
+                mail_container.children(".from").text("From :"+response[i]["sender"]);
+                mail_container.children(".subject").text(response[i]["sub"]);
+                mailbox.append(mail_container);
+            }
+        }
+    });
+
+}
 

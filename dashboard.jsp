@@ -23,8 +23,8 @@
             <!--panel in the left side
                 has button action-->
             <div class="leftpanel">
-                <button class="present hoverAction" id="inbox_button" onclick="leftpanel_activity_manager('inbox_button')"><p>Inbox</p></button>
-                <button class="hoverAction" id="outbox_button" onclick="leftpanel_activity_manager('outbox_button')"><p>Outbox</p></button>
+                <button class="present hoverAction" id="inbox_button" onclick="leftpanel_activity_manager('inbox_button'),loadMails('get-inbox-mail')"><p>Inbox</p></button>
+                <button class="hoverAction" id="outbox_button" onclick="leftpanel_activity_manager('outbox_button'),loadMails('get-outbox-mail')"><p>Outbox</p></button>
                 <button class="hoverAction" id="settings_button" onclick="leftpanel_activity_manager('settings_button')"><p>Settings</p></button>
             </div>
 
@@ -34,10 +34,11 @@
             <div class="middlepanel">
                 <input type="text" placeholder="search" class="search-bar">
                 <button class="pos-button" type="button" onclick="manage_popup('mail_composer')">New mail</button>
-                <div class="mailbox">mail llist</div>
-                
-               
 
+                <!--panel displays list of mail shown content from and subject-->
+                <div class="mailbox" onload="loadMails('get-inbox-mail')">
+                </div>
+                
                 <!--mail composer pop up box-->
                 <form class="pop-up_mailComposer" id="mail_composer" action="push" method="POSt" enctype="multipart/form-data" >
                     <!--menu bar-->
@@ -58,6 +59,12 @@
                     
                 </form>
             </div>
+        </div>
+
+        <!--the following is a container which holds from, subject of inbox and outbox mails-->
+        <div  class="style_mailContainer simple_mail_container">
+            <p class="from">hello</p>
+            <p class="subject">hw </p>
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
