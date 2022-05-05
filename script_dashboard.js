@@ -85,18 +85,21 @@ function loadMails(url){
             let mailbox = $(".mailbox");
             mailbox.empty();
 
-            let mail_container = $(".pop-up_mailComposer");
+            /*let mail_container = $(".pop-up_mailComposer");
 
             for(let i=0;i<response.length;i++){
                 let new_container = mail_container.clone();
+                new_container.removeClass("pop-up_mailComposer");
+                new_container.removeAttr("id","none");
+                new_container.addClass("style_mailContainer");
                 new_container.children(".taskbar").remove();
-                new_container.removeClass("pop-up_mailComposer").addClass("style_mailContainer");
-                new_container.children(".sub_field textarea").text(response[i]["sub"]);
-                new_container.children(".content textarea").text(response[i]["message"]);
+                new_container.children("from_field").val(response[i]["sender"]);
+                new_container.children(".sub_field").val(response[i]["sub"]);
+                new_container.children(".content").val(response[i]["message"]);
                 mailbox.append(new_container)
-            }
+            }*/
 
-            /*//setting mail argument in simple mail container
+            //setting mail argument in simple mail container
             let mail_container = $(".simple_mail_container");
 
             for(let i=0;i<response.length;i++){
@@ -108,7 +111,7 @@ function loadMails(url){
                 new_container.children(".message").text(response[i]["message"]);
                 
                 mailbox.append(new_container);         
-            }*/ 
+            }
         }
     });
 

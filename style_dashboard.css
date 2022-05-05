@@ -154,7 +154,7 @@
     justify-content: space-between;
 }
 
-.to_field{
+.to_field,.from_field{
     flex-basis:7%;
     display: flex;
     color: #757575;
@@ -197,7 +197,7 @@
 
 .description-field{
     height:auto;
-    width:auto;
+    width:7%;
     padding-top: 0.5em;
     padding-left: 0.2em;
     margin:0;
@@ -205,6 +205,10 @@
 
 input:focus{
     outline: none;
+}
+
+.pop-up_mailComposer .from_field{
+    display:none;
 }
 
 .style_mailContainer{
@@ -218,13 +222,13 @@ input:focus{
     text-overflow: ellipsis;
 }
 
-.style_mailContainer .menubar,.to_field{
+.style_mailContainer .from_field{
+    display: flex;
+}
+
+.style_mailContainer .to_field,.message{
     display:none;
 } 
-
-.style_mailContainer .content{
-    display:none;
-}
 
 .style_mailContainer:hover{
     background-color: rgb(244, 110, 110);

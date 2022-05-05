@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_dashboard.css">
     
-    <body>
+    <body onload="loadMails('get-inbox-mail')">
 
         <div class="navbar">
             <!--<img src="redandblue_logo.png" height="40px" alt="logo" style="margin-bottom: 15px;">!-->
@@ -36,7 +36,7 @@
                 <button class="pos-button" type="button" onclick="manage_popup('mail_composer')">New mail</button>
 
                 <!--panel displays list of mail shown content from and subject-->
-                <div class="mailbox" onload="loadMails('get-inbox-mail')">
+                <div class="mailbox">
                 </div>
                 
                 <!--mail composer pop up box-->
@@ -47,6 +47,7 @@
                         <button type="button" style="border: none;padding-right: 0.5em;padding-left: 0.5em;font-size:large; color:rgba(0, 0, 0, 0.496);
                         width:fit-content;height: fit-content;margin-top: 0.6em;border-radius:30%;" class="closeX" onclick="manage_popup('mail_composer')" >x</button>
                     </div>
+                    <div class="from_field"><p class="description-field">From :</p><input type="text" form="mail_composer" class="input-field" style="width:95%;" name="toId"></div>
                     <div class="to_field"><p class="description-field">To :</p><input type="text" form="mail_composer" class="input-field" style="width:95%;" name="toId"></div>
                     <textarea class="sub_field" placeholder="Subject" form="mail_composer" name="sub"></textarea>
                     <textarea class="content" form="mail_composer" name="msg"></textarea>
@@ -62,10 +63,7 @@
         </div>
 
         <!--the following is a container which holds from, subject of inbox and outbox mails-->
-        <div  class="style_mailContainer simple_mail_container" onclick="expand_mailContainer(msgid)">
-            <div class="mailContainerMenuBar">
-                <p></p>
-            </div>
+        <div  class="style_mailContainer simple_mail_container">
             <p class="from"></p>
             <p class="subject"></p>
             <p class="message"></p>
