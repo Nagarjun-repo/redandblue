@@ -208,16 +208,25 @@ input:focus{
 }
 
 .style_mailContainer{
-    flex-basis: 5%;
+    flex-basis: 10%;
     border: 0.5px solid lightgrey;
-    
 }
 
 .style_mailContainer p{
     margin:1em;
+    height: fit-content;
     text-overflow: ellipsis;
+}
+
+.style_mailContainer .menubar,.to_field{
+    display:none;
+} 
+
+.style_mailContainer .content{
+    display:none;
 }
 
 .style_mailContainer:hover{
     background-color: rgb(244, 110, 110);
 }
+

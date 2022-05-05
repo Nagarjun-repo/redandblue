@@ -62,9 +62,13 @@
         </div>
 
         <!--the following is a container which holds from, subject of inbox and outbox mails-->
-        <div  class="style_mailContainer simple_mail_container">
-            <p class="from">hello</p>
-            <p class="subject">hw </p>
+        <div  class="style_mailContainer simple_mail_container" onclick="expand_mailContainer(msgid)">
+            <div class="mailContainerMenuBar">
+                <p></p>
+            </div>
+            <p class="from"></p>
+            <p class="subject"></p>
+            <p class="message"></p>
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
