@@ -39,31 +39,29 @@
                 <div class="mailbox">
                 </div>
                 
-                <!--mail composer pop up box-->
-                <form class="pop-up_mailComposer" id="mail_composer" action="push" method="POSt" enctype="multipart/form-data" >
+                <!--template for mail composer pop up box and mail disply pop up box-->
+                <form class="composerAndDisplayerTemplate" method="POST" enctype="multipart/form-data" >
                     <!--menu bar-->
                     <div class="menubar" style="border: none;">
-                        <p style="padding-left: 1em; color: whitesmoke;">New</p>
+                        <p style="padding-left: 1em; color: whitesmoke;"></p>
                         <button type="button" style="border: none;padding-right: 0.5em;padding-left: 0.5em;font-size:large; color:rgba(0, 0, 0, 0.496);
-                        width:fit-content;height: fit-content;margin-top: 0.6em;border-radius:30%;" class="closeX" onclick="manage_popup('mail_composer')" >x</button>
+                        width:fit-content;height: fit-content;margin-top: 0.6em;border-radius:30%;" class="closeX" >x</button>
                     </div>
-                    <div class="from_field"><p class="description-field">From :</p><input type="text" form="mail_composer" class="input-field" style="width:95%;" name="toId"></div>
-                    <div class="to_field"><p class="description-field">To :</p><input type="text" form="mail_composer" class="input-field" style="width:95%;" name="toId"></div>
-                    <textarea class="sub_field" placeholder="Subject" form="mail_composer" name="sub"></textarea>
-                    <textarea class="content" form="mail_composer" name="msg"></textarea>
+                    <div class="from_field"><p class="description-field">From :</p><input type="text" class="input-field" style="width:95%;" name="fromId"></div>
+                    <div class="to_field"><p class="description-field">To :</p><input type="text" class="input-field" style="width:95%;" name="toId"></div>
+                    <textarea class="sub_field" placeholder="Subject" name="sub"></textarea>
+                    <textarea class="content" name="msg"></textarea>
                     
                     <!--Task bar-->
                     <div class="taskbar" style="border: none;">
-                        <button type="button" id="mail_push_button" style="width:7%;height:80%;border-radius: 0.2em; border:none;background-color:#65C18C; color: whitesmoke;" onclick="push_mail()">Send</button>
+                        <button type="button" id="mail_push_button" style="width:fit-content; height:80%; border-radius: 0.2em; border:none;background-color:#65C18C; color: whitesmoke;"></button>
                     </div>
-
-                    
                 </form>
             </div>
         </div>
 
         <!--the following is a container which holds from, subject of inbox and outbox mails-->
-        <div  class="style_mailContainer simple_mail_container">
+        <div  class="simple_mail_container style_simpleMailContainer">
             <p class="from"></p>
             <p class="subject"></p>
             <p class="message"></p>

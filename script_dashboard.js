@@ -3,17 +3,57 @@ window.addEventListener("load",function(){
     window.history.pushState(null,null,"dashboard");
 });
 
-function manage_popup(id){
-    let obj = document.getElementById(id);
+function push_mail(){
+    
+    const mail_form = document.getElementById("mail_composer");
+    
+    let mail = new FormData(mail_form);
 
-    if(obj.style.display == "flex"){
-        //close the pop up if open
-        obj.style.display = "none";
+    let httpRequest = new XMLHttpRequest();
+
+    let button = document.getElementById("mail_push_button");
+
+    mail_form.remove();
+
+    console.log(mail);
+
+    httpRequest.open("POST","dashboard/push");
+    httpRequest.send(mail);
+
+    httpRequest.onload = function(){
+        if(httpRequest.status == 200){
+            alert("mail sent");
+        }
+        else{
+            alert("There was a problem in sending the mail");
+        }
+    }
+
+}
+
+function manage_popup(id,action){
+    
+    if(id == "mail_composer"){
+        
+        let composer = $(".composerAndDisplayerTemplate").clone();
+        composer.attr("id",id);
+        composer.addClass("pop-up_mailComposer");
+        composer.children(".menubar").children("p").text("New")
+        composer.children(".from_field").remove();
+        composer.children(".to_field").children("input").attr("form",id);
+        composer.children("textarea").attr("form",id);
+       
+        composer.children(".menubar").children("button").click(function(){
+            composer.remove();
+        });
+       
+        composer.children(".taskbar").children("button").text("send");
+        composer.children(".taskbar").children("button").attr("onclick","push_mail()");
+        $(".middlepanel").append(composer);
     }
 
     else{
-        //opne the pop up if open
-        obj.style.display = "flex";
+        console.log("invalid operation");
     }
 }
 
@@ -38,39 +78,7 @@ function leftpanel_activity_manager(id){
     clicked_button.style.backgroundColor = "#006ED4";
 }
 
-function push_mail(){
-    
-    const mail_form = document.getElementById("mail_composer");
-    
-    const sub = mail_form.elements[2].value;
-    const msg = mail_form.elements[3].value;
-    const userId = mail_form.elements[4].value;
 
-    let mail = new FormData(mail_form);
-
-    let httpRequest = new XMLHttpRequest();
-
-    let button = document.getElementById("mail_push_button");
-
-    button.type = "reset";
-
-    mail_form.style.display = "none";
-
-    console.log(mail.values());
-
-    httpRequest.open("POST","dashboard/push");
-    httpRequest.send(mail);
-
-    httpRequest.onload = function(){
-        if(httpRequest.status == 200){
-            alert("mail sent");
-        }
-        else{
-            alert("There was a problem in sending the mail");
-        }
-    }
-
-}
 
 //function gets inbox mails from the database and displays them in the user interface
 
@@ -80,41 +88,57 @@ function loadMails(url){
         url: url,
         type:'GET',
         success:function(response,status,xhr){
+
             console.log(response.length)
             console.log(response);
             let mailbox = $(".mailbox");
             mailbox.empty();
 
-            /*let mail_container = $(".pop-up_mailComposer");
+            let mail_container = $(".composerAndDisplayerTemplate");
+
+            let simpleMailContainer = $(".simple_mail_container");
 
             for(let i=0;i<response.length;i++){
+
+                let msgid = response[i]["msgid"];
+                let from = response[i]["sender"];
+                let subject = response[i]["sub"];
+                let message = response[i]["message"];
+
                 let new_container = mail_container.clone();
-                new_container.removeClass("pop-up_mailComposer");
-                new_container.removeAttr("id","none");
+                new_container.attr("id",msgid);
                 new_container.addClass("style_mailContainer");
-                new_container.children(".taskbar").remove();
-                new_container.children("from_field").val(response[i]["sender"]);
-                new_container.children(".sub_field").val(response[i]["sub"]);
-                new_container.children(".content").val(response[i]["message"]);
-                mailbox.append(new_container)
-            }*/
+                new_container.children("from_field").children("input").text(from);
+                new_container.children(".sub_field").val(subject);
+                new_container.children(".content").val(message);
 
-            //setting mail argument in simple mail container
-            let mail_container = $(".simple_mail_container");
+                new_container.children(".menubar").children("p").text(subject);
+                new_container.children(".menubar").children("button").click(function(){
+                    $("#"+msgid).css("display","none");
+                })
 
-            for(let i=0;i<response.length;i++){
-                let new_container = mail_container.clone();
-                console.log(response[i]["message"]);
-                new_container.attr("id",response[i]["msgid"]);
-                new_container.children(".from").text("From :"+response[i]["sender"]);
-                new_container.children(".subject").text("Subject :"+response[i]["sub"]);
-                new_container.children(".message").text(response[i]["message"]);
+                new_container.children(".taskbar").children("button").text("Forward");
+                mailbox.append(new_container);
+
+                /************************************************************************************************** */
+
+                let new_simpleContainer = simpleMailContainer.clone();
+                new_simpleContainer.attr("id",msgid);
+                new_simpleContainer.children(".from").text("From :"+from);
+                new_simpleContainer.children(".subject").text("Subject :"+subject);
+                new_simpleContainer.attr("onclick","expand_mailContainer("+msgid+")");
                 
-                mailbox.append(new_container);         
+                mailbox.append(new_simpleContainer);
             }
+
         }
     });
 
+}
+
+function expand_mailContainer(id){
+
+    let target_container = $("#"+id).css("display","flex");
 }
 
 

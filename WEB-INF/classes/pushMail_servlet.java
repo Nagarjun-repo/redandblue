@@ -14,7 +14,7 @@ public class pushMail_servlet extends HttpServlet {
             Cookie[] ck = req.getCookies(); 
             int fromId=0;
             for(Cookie cookie:ck){
-                 if(cookie.getName().equals("userId"));{
+                 if(cookie.getName().equals("userId")){
                       fromId = Integer.parseInt(cookie.getValue());
                  }
             }

@@ -125,9 +125,9 @@
     height:65%;
     margin:0;
     position : fixed;
-    display: none;
+    display: flex;
     flex-direction: column;
-    z-index: 2;
+    z-index: 3;
     right:1%;
     top:30%;
     border: 0.5px solid lightgrey;
@@ -135,9 +135,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.pop-up_mailComposer textarea{
+textarea{
     border: 0.5px solid lightgrey;
     margin: 0;
+    width:100%;
     resize: none;
     overflow: hidden;
 }
@@ -182,7 +183,11 @@
     padding-left: 1em;
 }
 
-.pop-up_mailComposer textarea:focus{
+.taskbar button{
+    width:fit-content;
+}
+
+textarea:focus{
     outline:none;
 }
 
@@ -207,30 +212,34 @@ input:focus{
     outline: none;
 }
 
-.pop-up_mailComposer .from_field{
-    display:none;
+.style_mailContainer{
+    width:80%;
+    height: 84%;
+    margin:0;
+    position : fixed;
+    display: none;
+    z-index: 2;
+    flex-direction: column;
+    border: 0.5px solid lightgrey;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
-.style_mailContainer{
-    flex-basis: 10%;
+.style_mailContainer div{
     border: 0.5px solid lightgrey;
 }
 
-.style_mailContainer p{
-    margin:1em;
-    height: fit-content;
-    text-overflow: ellipsis;
+.style_simpleMailContainer:hover{
+    background-color: rgb(23, 135, 241);
 }
 
-.style_mailContainer .from_field{
-    display: flex;
-}
-
-.style_mailContainer .to_field,.message{
-    display:none;
-} 
-
-.style_mailContainer:hover{
+.style_simpleMailContainer{
+    flex-basis:7%;
+    padding-left: 0.5em;
+    border: 0.5px solid lightgrey;
     background-color: rgb(244, 110, 110);
 }
 
+.style_simpleMailContainer p{
+    margin:0.5em;
+}
