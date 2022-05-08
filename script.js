@@ -31,11 +31,17 @@ function verify(){
 $(document).ready(function(){
     
     let inputArr = $("form");
+    fnameValidity = false;
+    lnameValidity = false;
+    mobnoValidity = false;
+    unameValidity = false;
 
+    
     //validatin first name field
     let fnamePattern = /^[a-zA-Z]{1,20}$/;
     inputArr.children("#fname").on('input',function(){
-        if(fnamePattern.test($(this).val()) == false){
+        fnameValidity = fnamePattern.test($(this).val());
+        if(fnameValidity == false){
             console.log($(this));
             $(this).css("border","0.5px solid red");
         }
@@ -47,7 +53,8 @@ $(document).ready(function(){
     //validating lastname field
     let lnamePattern = /^[a-zA-Z]{1,20}$/;
     inputArr.children("#lname").on('input',function(){
-        if(lnamePattern.test($(this).val()) == false){
+        lnameValidity = lnamePattern.test($(this).val());
+        if(lnameValidity == false){
             console.log($(this));
             $(this).css("border","0.5px solid red");
         }
@@ -59,7 +66,8 @@ $(document).ready(function(){
     //validating mobile no field
     let mobnoPattern = /^[0-9]{10}$/;
     inputArr.children("#mobno").on('input',function(){
-        if(mobnoPattern.test($(this).val()) == false){
+        mobnoValidity = mobnoPattern.test($(this).val());
+        if(mobnoValidity == false){
             console.log($(this));
             $(this).css("border","0.5px solid red");
         }
@@ -71,7 +79,8 @@ $(document).ready(function(){
     //validating userName field
     let unamePattern = /^[a-zA-z0-9.*$#]+@redandblue+.com$/;
     inputArr.children("#uname").on('input',function(){
-        if(unamePattern.test($(this).val()) == false){
+        unameValidity = unamePattern.test($(this).val());
+        if(unameValidity == false){
             console.log($(this));
             $(this).css("border","0.5px solid red");
         }
@@ -81,14 +90,12 @@ $(document).ready(function(){
     });
 
     //validatin password field
-    let pwdPattern = /^[a-zA-Z0-9$#>!%()]$/;
-    inputArr.children("#pwd").on('input',function(){
-        if(pwdPattern.test($(this).val()) == false){
-            console.log($(this));
-            $(this).css("border","0.5px solid red");
+    $("form").children("button").on("click",function(event){
+        if(fnameValidity && lnameValidity && mobnoValidity && unameValidity){
+            verify();
         }
         else{
-            $(this).css("border","0.5px solid lightgrey");
+            $("form").children("input").css("border","0.5px solid red");
         }
     });
 });

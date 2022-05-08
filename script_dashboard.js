@@ -91,6 +91,7 @@ function loadMails(url){
 
             console.log(response.length)
             console.log(response);
+            
             let mailbox = $(".mailbox");
             mailbox.empty();
 
@@ -102,6 +103,7 @@ function loadMails(url){
 
                 let msgid = response[i]["msgid"];
                 let from = response[i]["sender"];
+                let to = response[i]["receipients"];
                 let subject = response[i]["sub"];
                 let message = response[i]["message"];
 
@@ -110,6 +112,8 @@ function loadMails(url){
                 new_container.addClass("style_mailContainer");
                 new_container.children(".from_field").children("input").val(from);
                 new_container.children(".from_field").children("input").prop("readonly",true);
+                new_container.children(".to_field").children("input").val(to);
+                new_container.children(".to_field").children("input").prop("readonly",true);
                 new_container.children(".sub_field").val(subject);
                 new_container.children(".sub_field").prop("readonly",true);
                 new_container.children(".content").val(message);
