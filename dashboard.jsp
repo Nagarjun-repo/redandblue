@@ -73,7 +73,9 @@
                 <img src="profile-picture.jpg" height="75%" width="35%" alt="profile-pic" >
             </div>
             <div class="buttons">
-                <label class="fileLoadButton">Edit<input type="file" style="display: none;"></label>
+                <form method="post" enctype="multipart/form-data" id="picUploader">
+                    <label class="fileLoadButton">Edit<input id="fileUploader" type="file" accept=".jpg,.png" style="display: none;" onclick="uploadPicture()" form="picUploader"></label>
+                </form>
                 <button type="button" class="actionButton" onclick="popupDisplayPicEditor()">Close</button>
             </div>
         </div>

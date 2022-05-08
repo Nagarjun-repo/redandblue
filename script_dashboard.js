@@ -166,3 +166,26 @@ function popupDisplayPicEditor(){
         popup.style.display = "none";
     }
 }
+
+function uploadPicture(){
+    console.log("inside function");
+    $("#fileUploader").on("change",function(){
+        
+        let file = $("#fileUploader")[0].files;
+        let pic = new FormData();
+        pic.append("picture",file);
+        console.log(pic);
+        let httpRequest = new XMLHttpRequest();
+        httpRequest.open("post","dashboard/upload_profile_picture");
+        httpRequest.send(pic);
+
+        httpRequest.onload = function(){
+            if(httpRequest.status == 200){
+                alert("Profile picture updated successfully");
+            }
+            else{
+                alert("There was an error in uploading files");
+            }
+        }
+    });
+}
