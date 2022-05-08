@@ -15,7 +15,7 @@
         <div class="navbar">
             <!--<img src="redandblue_logo.png" height="40px" alt="logo" style="margin-bottom: 15px;">!-->
             <img src="REDandBLUE.png"   height="30em" width = "200em" alt="REDandBLUE" style="padding:1em 0 1em 0.5em;">
-            <img src="profile-picture.jpg" height="98%" alt="profile-pic" class="pos-profile">
+            <img src="profile-picture.jpg" height="98%" alt="profile-pic" class="pos-profile" onclick="popupDisplayPicEditor()">
         </div>
 
         <div class="workspace">
@@ -65,6 +65,17 @@
             <p class="from"></p>
             <p class="subject"></p>
             <p class="message"></p>
+        </div>
+
+        <!--the following is the popup to edit display picture-->
+        <div id="editDPPopup">
+            <div class="displayPic">
+                <img src="profile-picture.jpg" height="75%" width="35%" alt="profile-pic" >
+            </div>
+            <div class="buttons">
+                <label class="fileLoadButton">Edit<input type="file" style="display: none;"></label>
+                <button type="button" class="actionButton" onclick="popupDisplayPicEditor()">Close</button>
+            </div>
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -156,5 +156,13 @@ function expand_mailContainer(id){
 }
 
 
-
-
+function popupDisplayPicEditor(){
+    let popup = document.getElementById("editDPPopup");
+    
+    if(popup.style.display == "none"){
+        popup.style.display = "flex"; 
+    }
+    else{
+        popup.style.display = "none";
+    }
+}
