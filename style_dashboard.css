@@ -156,7 +156,7 @@ textarea{
 }
 
 .to_field,.from_field{
-    flex-basis:7%;
+    flex-basis: 7%;
     display: flex;
     color: #757575;
     font-weight: lighter;
@@ -178,6 +178,7 @@ textarea{
 
 .taskbar{
     flex-basis: 10%;
+    display:flex;
     background-color: #0064c1;
     padding-top: 0.5em;
     padding-left: 1em;
@@ -202,8 +203,8 @@ textarea:focus{
 
 .description-field{
     height:auto;
-    width:7%;
-    padding-top: 0.5em;
+    width:fit-content;
+    padding-top: 0.7em;
     padding-left: 0.2em;
     margin:0;
 }
@@ -213,8 +214,8 @@ input:focus{
 }
 
 .style_mailContainer{
-    width:80%;
-    height: 84%;
+    width:79%;
+    height: 82%;
     margin:0;
     position : fixed;
     display: none;
@@ -230,7 +231,7 @@ input:focus{
 }
 
 .style_simpleMailContainer:hover{
-    background-color: rgb(23, 135, 241);
+    border: 5px black;
 }
 
 .style_simpleMailContainer{

@@ -24,10 +24,10 @@
             <h3 style="text-align: center;">Create an account</h3>
             <p style="text-align: center;">to continue</p>
             <form action="signUp.html/create" method="post">
-                <input type="text" placeholder="First Name" name="fname">
-                <input type="text" placeholder="Last Name" name="lname">
-                <input type="text" placeholder="Mobile Number" name="mobno" style="display: block;">
-                <input type="text" placeholder="User Name" name="uname" style="display: block;width: 70%;">
+                <input type="text" placeholder="First Name" name="fname" id="fname">
+                <input type="text" placeholder="Last Name" name="lname" id="lname">
+                <input type="text" placeholder="Mobile Number" name="mobno" style="display: block;" id="mobno">
+                <input type="text" placeholder="User Name" name="uname" style="display: block;width: 70%;" id="uname">
                 <input type="password" id="pwd" placeholder="Password" name="pwd">
                 <input type="Password" id="show" placeholder="Retype to confirm" style="display: inline;">
                 <input type="checkbox" id="showPwd" onclick="toggle('pwd'); toggle('show')" style="display: inline; margin-left: 55%;">
@@ -37,5 +37,6 @@
             </form>
         </div>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="script.js"></script>
 </html>

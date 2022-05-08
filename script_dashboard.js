@@ -108,16 +108,26 @@ function loadMails(url){
                 let new_container = mail_container.clone();
                 new_container.attr("id",msgid);
                 new_container.addClass("style_mailContainer");
-                new_container.children("from_field").children("input").text(from);
+                new_container.children(".from_field").children("input").val(from);
+                new_container.children(".from_field").children("input").prop("readonly",true);
                 new_container.children(".sub_field").val(subject);
+                new_container.children(".sub_field").prop("readonly",true);
                 new_container.children(".content").val(message);
+                new_container.children(".content").prop("readonly",true);
 
-                new_container.children(".menubar").children("p").text(subject);
-                new_container.children(".menubar").children("button").click(function(){
+                let menubar = new_container.children(".menubar");
+                menubar.children("p").text(subject);
+                menubar.children("button").css({"color":"white","background-color":"black"})
+                menubar.children("button").click(function(){
                     $("#"+msgid).css("display","none");
                 })
+                new_container.children(".menubar").css("background-color","#F46E6E");
 
-                new_container.children(".taskbar").children("button").text("Forward");
+                let taskbar = new_container.children(".taskbar"); 
+                taskbar.children("button").text("Forward");
+                taskbar.css({"background-color":"white","border":"none"});
+                taskbar.css("justify-content","space-around");
+            
                 mailbox.append(new_container);
 
                 /************************************************************************************************** */
