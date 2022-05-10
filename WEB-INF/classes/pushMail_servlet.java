@@ -18,7 +18,7 @@ public class pushMail_servlet extends HttpServlet {
                       fromId = Integer.parseInt(cookie.getValue());
                  }
             }
-            String[] toId = req.getParameter("toId").split(",");
+            String[] toId = req.geṭParameter("toId").split(",");
             String sub = req.getParameter("sub");
             String msg = req.getParameter("msg");
             Thread push = new Thread(new DatabaseConnectorAPI.setMailArguments(fromId,toId,sub,msg));
