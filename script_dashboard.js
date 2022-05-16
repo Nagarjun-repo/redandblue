@@ -47,8 +47,8 @@ function manage_popup(id,action){
             composer.remove();
         });
        
-        composer.children(".taskbar").children("button").text("send");
-        composer.children(".taskbar").children("button").attr("onclick","push_mail()");
+        composer.children(".taskbar").children("#mail_push_button").text("send");
+        composer.children(".taskbar").children("#mail_push_button").attr("onclick","push_mail()");
         $(".middlepanel").append(composer);
     }
 
@@ -108,6 +108,15 @@ function loadMails(url){
                 let message = response[i]["message"];
 
                 let new_container = mail_container.clone();
+                if(url == "get-inbox-mail"){
+                    msgid = msgid+"-inbox";
+                }
+                else if(url == "get-outbox-mail"){
+                    msgid = msgid+"-outbox";
+                }
+                else{
+                    console.log("invalid option");
+                }
                 new_container.attr("id",msgid);
                 new_container.addClass("style_mailContainer");
                 new_container.children(".from_field").children("input").val(from);
@@ -128,19 +137,36 @@ function loadMails(url){
                 new_container.children(".menubar").css("background-color","#F46E6E");
 
                 let taskbar = new_container.children(".taskbar"); 
-                taskbar.children("button").text("Forward");
+                taskbar.children("#mail_push_button").text("Forward");
+                taskbar.children(".deleteIcon").css("display","flex");
                 taskbar.css({"background-color":"white","border":"none"});
-                taskbar.css("justify-content","space-around");
+                taskbar.css("justify-content","space-between");
             
                 mailbox.append(new_container);
 
                 /************************************************************************************************** */
 
                 let new_simpleContainer = simpleMailContainer.clone();
-                new_simpleContainer.attr("id",msgid);
-                new_simpleContainer.children(".from").text("From :"+from);
-                new_simpleContainer.children(".subject").text("Subject :"+subject);
-                new_simpleContainer.attr("onclick","expand_mailContainer("+msgid+")");
+
+                if(url == "get-inbox-mail"){
+                    
+                    new_simpleContainer.attr("id",msgid);
+                    new_simpleContainer.children(".from").text("From :"+from);
+                    new_simpleContainer.children(".subject").text("Subject :"+subject);
+                    new_simpleContainer.attr("onclick","expand_mailContainer("+"\'"+msgid+"\'"+")");
+                }
+
+                else if(url == "get-outbox-mail"){
+                    
+                    new_simpleContainer.attr("id",msgid);
+                    new_simpleContainer.children(".from").text("To :"+to);
+                    new_simpleContainer.children(".subject").text("Subject :"+subject);
+                    new_simpleContainer.attr("onclick","expand_mailContainer("+"\'"+msgid+"\'"+")");
+                }
+
+                else{
+                    console.log("Invalid option in loadmails method");
+                }
                 
                 mailbox.append(new_simpleContainer);
             }
@@ -189,3 +215,50 @@ function uploadPicture(){
         }
     });
 }
+
+function delete_mail(element){
+    mail = $(element).attr('id');
+
+    let httpRequest = new XMLHttpRequest();
+
+    msgId = "msgId="+mail;
+
+    httpRequest.open("POST","delete_mail");
+
+    httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    
+    httpRequest.send(msgId);
+
+    httpRequest.onload = function(){
+
+        if(httpRequest.status == 200){
+            alert("Mail deleted");
+            $("#"+mail).remove();
+        }
+        else{
+            alert("There was an error in deleting the mail");
+        }
+    }
+
+
+}
+
+$(".search-bar").on("change",
+    function(){
+        let searchPattern = $(".search-bar").val();
+        console.log(searchPattern);
+        searchRegex = new RegExp(searchPattern,"i");
+        let mails = $(".mailbox").children(".simple_mail_container");
+        console.log(mails);
+       for(let i=0;i<mails.length;i++){
+            let mail = $(mails[i]).children("p")[0];
+            if(!searchRegex.test($(mail).text())){
+                $(mails[i]).css("display","none");
+                console.log("inside if");
+            }
+            else{
+                $(mails[i]).css("display","block");
+            }
+       }
+    }
+);

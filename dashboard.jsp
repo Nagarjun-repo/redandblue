@@ -55,6 +55,7 @@
                     <!--Task bar-->
                     <div class="taskbar" style="border: none;">
                         <button type="button" id="mail_push_button" style="width:fit-content; height:80%; border-radius: 0.2em; border:none;background-color:#65C18C; color: whitesmoke;"></button>
+                        <button class="deleteIcon" style="display: none;" type="button" onclick="delete_mail(this.parentElement.parentElement)"><img src="deleteIcon.png" alt="deleteButton"></button>
                     </div>
                 </form>
             </div>
@@ -62,7 +63,8 @@
 
         <!--the following is a container which holds from, subject of inbox and outbox mails-->
         <div  class="simple_mail_container style_simpleMailContainer">
-            <p class="from"></p>
+            <p class="from" style="display: inline-block;"></p>
+            <button class="deleteIcon" style="float: right;" hidden><img src="deleteIcon.png" alt="deleteButton" onclick="delete_mail(this.parentElement.parentElement)"></button>
             <p class="subject"></p>
             <p class="message"></p>
         </div>

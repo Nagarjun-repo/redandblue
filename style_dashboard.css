@@ -179,6 +179,7 @@ textarea{
 .taskbar{
     flex-basis: 10%;
     display:flex;
+    justify-content: space-between;
     background-color: #0064c1;
     padding-top: 0.5em;
     padding-left: 1em;
@@ -234,6 +235,10 @@ input:focus{
     border: 5px black;
 }
 
+.style_simpleMailContainer:hover .deleteIcon{
+    display: inline-block;
+}
+
 .style_simpleMailContainer{
     flex-basis:7%;
     padding-left: 0.5em;
@@ -242,7 +247,7 @@ input:focus{
 }
 
 .style_simpleMailContainer p{
-    margin:0.5em;
+    margin:0.3em;
 }
 
 #editDPPopup{
@@ -292,4 +297,14 @@ input:focus{
     text-align:center;
     background-color: #0064c1;
     color: white;
+}
+
+.deleteIcon{
+    background-color: transparent;
+    display: none;
+    border: none;
+    padding: 0 0;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
 }
